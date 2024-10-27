@@ -2,6 +2,7 @@
 
 Visualize customer data that is stored in a CSV file.
 
+
 ## 1. About the Project
 
 Given: a dataset that contains the name, company, address and contact information of 500 people in the US (randomly generated).
@@ -40,3 +41,46 @@ Task:
     - Nginx
 - CI/CD:
     - GitHub Actions
+
+## 3. Run the Project
+
+1. Install Docker and Docker Compose
+
+2. Run the following commands:
+
+```bash
+# Go to the project directory:
+$ cd path/to/dashboard-haskell-react
+# Pull the latest images specified in docker-compose.prod.yml:
+$ docker-compose -f docker-compose.prod.yml pull
+# Run the containers with Docker Compose in detached mode:
+$ docker-compose -f docker-compose.prod.yml up -d
+```
+
+3. The project now is running at http://localhost:3005
+
+
+## 4. Build the Docker Images
+
+### 4.1 Build the Docker Images Locally (Development)
+
+Install Docker and Docker Compose, then run the following commands:
+
+```bash
+# Go to the project directory:
+$ cd path/to/dashboard-haskell-react
+# Build the container without using cache:
+$ docker compose build --no-cache
+```
+
+```bash
+# Run the container in the background (detached mode):
+$ docker compose up -d
+# The project now is running at http://localhost:3005
+# Stop the container:
+$ docker compose down
+```
+
+### 4.2 Build the Docker Images with GitHub Actions (Production)
+
+Details: check out `.github/workflows/docker_build.yml`
