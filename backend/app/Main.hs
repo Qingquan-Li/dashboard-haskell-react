@@ -31,7 +31,7 @@ data Person = Person
     , city        :: !Text
     , county      :: !Text
     , state       :: !Text
-    , zipCode     :: !Text
+    , zipCode     :: !Text  -- zip is a reserved keyword. Use zipCode instead.
     , phone1      :: !Text
     , phone2      :: !Text
     , email       :: !Text
@@ -68,14 +68,14 @@ instance FromJSON SearchRequest
 -- Function to get the value of a specified field from a Person
 getFieldValue :: Text -> Person -> Text
 getFieldValue field person
-    | field == "first_name"   = firstName person
-    | field == "last_name"    = lastName person
-    | field == "company_name" = companyName person
+    | field == "firstName"   = firstName person
+    | field == "lastName"    = lastName person
+    | field == "companyName" = companyName person
     | field == "address"      = address person
     | field == "city"         = city person
     | field == "county"       = county person
     | field == "state"        = state person
-    | field == "zip"          = zipCode person
+    | field == "zipCode"      = zipCode person
     | field == "phone1"       = phone1 person
     | field == "phone2"       = phone2 person
     | field == "email"        = email person
@@ -92,9 +92,9 @@ main = do
             let personList = V.toList persons
 
             -- Set up CORS policy
-            let origins = [ "http://localhost:3000"
-                        , "http://192.168.0.101:3000"
-                        , "https://us-data-demo.qingquanli.com"
+            let origins = [ "http://localhost:5173"
+                        , "http://192.168.0.196:5173"
+                        , "https://dashboard-haskell-react.qingquanli.com"
                         ]
             let corsPolicy :: CorsResourcePolicy
                 corsPolicy = simpleCorsResourcePolicy
