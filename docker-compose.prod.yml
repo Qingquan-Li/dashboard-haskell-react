@@ -1,0 +1,14 @@
+services:
+  backend:
+    image:  qingquanli/dashboard-haskell-react-backend:latest
+    container_name: dashboard-haskell-react-backend
+    ports:
+      - "8005:8005"
+    restart: unless-stopped
+
+  frontend:
+    image:  qingquanli/dashboard-haskell-react-frontend:latest
+    container_name: dashboard-haskell-react-frontend
+    ports:
+      - "3005:80"
+    restart: unless-stopped

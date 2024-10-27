@@ -93,7 +93,9 @@ main = do
 
             -- Set up CORS policy
             let origins = [ "http://localhost:5173"
+                        , "http://localhost:3005"
                         , "http://192.168.0.196:5173"
+                        , "http://192.168.0.196:3005"
                         , "https://dashboard-haskell-react.qingquanli.com"
                         ]
             let corsPolicy :: CorsResourcePolicy
@@ -106,7 +108,7 @@ main = do
                 corsMiddleware = cors (const $ Just corsPolicy)
 
             -- Start Scotty server
-            scotty 8080 $ do
+            scotty 8005 $ do
                 middleware corsMiddleware
 
                 -- GET /api/data endpoint
