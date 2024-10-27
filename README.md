@@ -1,7 +1,8 @@
 # Dashboard with Haskell and React
 
-Visualize customer data that is stored in a CSV file.
+Visualize customer data that is stored in a CSV file:
 
+<img width="1116" alt="Screenshot" src="https://github.com/user-attachments/assets/b5d55acb-1dd1-4494-9c51-d404669e8e7c">
 
 ## 1. About the Project
 
