@@ -14,5 +14,5 @@ stack build
 stack exec backend-exe
 ```
 
-The backend will be running at `http://localhost:8080`
-View the `api/data` endpoint at `http://localhost:8080/api/data`
+The backend will be running at `http://localhost:8005`
+View the `api/data` endpoint at `http://localhost:8005/api/data`
